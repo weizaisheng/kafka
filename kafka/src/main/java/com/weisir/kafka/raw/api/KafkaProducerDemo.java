@@ -28,16 +28,16 @@ public class KafkaProducerDemo {
         KafkaProducer<String, String> kafkaProducer = new KafkaProducer(properties);
 
         // 创建 Kakfa 消息  = ProducerRecord
-        String topic = "gupao111";
+        String topic = "gupao";
         Integer partition = 0;
         Long timestamp = System.currentTimeMillis();
         String key = "message-key";
-        String value = "caonima";
+        String value = "9.18shijian";
         ProducerRecord<String,String> producerRecord = new ProducerRecord(topic,partition,timestamp,key,value);
 
         // 发送消息
         Future<RecordMetadata> future = kafkaProducer.send(producerRecord);
-        //强制执行
+//        //强制执行
         future.get();
 
     }

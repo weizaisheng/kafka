@@ -1,13 +1,12 @@
-//package com.weisir.kafka;
-//
-//import org.junit.jupiter.api.Test;
-//import org.springframework.boot.test.context.SpringBootTest;
-//
+package com.weisir.kafka;
+
+
+//@RunWith(SpringRunner.class)
 //@SpringBootTest
 //class KafkaApplicationTests {
 //
-//	@Test
-//	void contextLoads() {
-//	}
+////	@Test
+////	void contextLoads() {
+////	}
 //
 //}

@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.ExecutionException;
+
 /**
  * <p></p>
  *
@@ -29,7 +31,13 @@ public class SpringKafKapProducerController {
 
     @PostMapping("/messag/send")
     public Boolean send(@RequestParam String message){
-        kafkaTemplate.send(topic,message);
+        try {
+            kafkaTemplate.send(topic,message).get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
         return true;
     }
 
